@@ -1,0 +1,23 @@
+package fr.mds.model;
+
+public class CoolDrink implements Item{
+	private String name;
+
+	@Override
+	public String name() {
+		return this.name;
+	}
+
+	@Override
+	public Packing packing() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public float Price() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

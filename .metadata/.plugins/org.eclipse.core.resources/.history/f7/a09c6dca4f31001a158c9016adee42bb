@@ -1,0 +1,6 @@
+package fr.mds.model;
+
+public class Bottle implements Packing{
+	private CoolDrink pepsi = new Pepsi();
+	private Burger veganBurger = new VegBurger();
+}

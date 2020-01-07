@@ -1,23 +1,15 @@
 package fr.mds.model;
 
-public class Burger implements Item{
+public abstract class Burger implements Item{
+	protected String name;
+	protected Packing packing;
+	protected float price;
 
-	@Override
-	public String name() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	abstract public String name();
 
-	@Override
-	public Packing packing() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	abstract public Packing packing();
 
-	@Override
-	public float Price() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+	abstract public float price();
+	
+	abstract public boolean isVeg();
 }

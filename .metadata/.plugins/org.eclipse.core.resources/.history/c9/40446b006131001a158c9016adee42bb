@@ -1,0 +1,30 @@
+package fr.mds.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public static class MealBuilder {
+	private List<Item> items = new ArrayList<Item>();
+	
+	public MealBuilder addItem(Item item) {
+		items.add(item);
+		return this;
+	}
+	
+	public MealBuilder prepareVegMeal(){
+		items.add(new VegBurger());
+		items.add(new Pepsi());
+		return this;
+    }
+	
+	public MealBuilder prepareNonVegMeal(){
+		return null;
+    }
+	
+	public Meal build() {
+		final Meal result = new Meal();
+		result.addItem(this.items);
+		items = new ArrayList<Item>();
+		return result;
+	}
+}

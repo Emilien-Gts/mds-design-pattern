@@ -1,0 +1,27 @@
+package fr.mds.model;
+
+public class Coke extends CoolDrink{
+	
+	public Coke(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String name() {
+		// TODO Auto-generated method stub
+		return "Coke";
+	}
+
+	@Override
+	public Packing packing() {
+		// TODO Auto-generated method stub
+		return super.pac;
+	}
+
+	@Override
+	public float price() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

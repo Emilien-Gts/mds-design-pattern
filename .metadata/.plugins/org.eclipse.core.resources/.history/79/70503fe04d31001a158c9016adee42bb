@@ -1,0 +1,12 @@
+package fr.mds.model;
+
+public abstract class CoolDrink implements Item{
+	private String name;
+	private Packing packing;
+	private float price;
+
+	public String name() {
+		
+	}
+
+}

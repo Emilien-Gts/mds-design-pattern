@@ -1,0 +1,56 @@
+package fr.mds.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Meal {
+	private List<Item> items = new ArrayList<Item>();
+	
+	public void addItem(Item item) {
+		this.items.add(item);
+	}
+	
+	public float getCoast() {
+		int finalPrice = 0;
+		for (Item item : this.items) {
+			finalPrice += item.price();
+		}
+		
+		return finalPrice;
+	}
+	
+	public void showItems() {
+		int index = 0;
+		for (Item item : this.items) {
+			System.out.println("Item n°"+ index++ + ": "+ item.name());
+		}
+	}
+	
+	public static class MealBuilder {
+		public MealBuilder addItem(Item item) {
+			this.addItem(item);
+			return this;
+		}
+		
+		public MealBuilder prepareVegMeal(){
+			return new MealBuilder().addItem(new VegBurger()).addItem(new Pepsi());
+        }
+		
+		public MealBuilder prepareNonVegMeal(){
+			return new MealBuilder().addItem(new ChickenBurger()).addItem(new Pepsi());
+        }
+		
+		public Meal build() {
+			final Meal meal = new Meal();
+			return meal;
+		}
+	}
+	
+	public Meal() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Meal(List<Item> items) {
+		this.items = items;
+	}
+}

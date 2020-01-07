@@ -1,0 +1,17 @@
+package fr.mds.launcher;
+
+import fr.mds.model.Meal;
+import fr.mds.model.Meal.MealBuilder;
+import fr.mds.model.Pepsi;
+import fr.mds.model.VegBurger;
+
+public class Main {
+	public static void main(String args[]) { 
+        System.out.println("Hello, World"); 
+        
+        Meal vegMeal = new Meal();
+        vegMeal.addItem(new VegBurger("Vegi", null, 100));
+        vegMeal.addItem(new Pepsi("Pepsi Sans sucre", null, 150));
+        vegMeal.showItems();
+    } 
+}

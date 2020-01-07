@@ -1,0 +1,67 @@
+package fr.mds.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Meal {
+	private List<Item> items = new ArrayList<Item>();
+	
+	public void addItem(Item item) {
+		this.items.add(item);
+	}
+	
+	public float getCoast() {
+		int finalPrice = 0;
+		for (Item item : this.items) {
+			finalPrice += item.price();
+		}
+		
+		return finalPrice;
+	}
+	
+	public void showItems() {
+		int index = 0;
+		for (Item item : this.items) {
+			System.out.println(">Item n°"+ index++ + ": "+ item.name());
+		}
+	}
+	
+	public static class MealBuilder {
+		private List<Meal> mealItems = new ArrayList<Meal>();
+		
+		public MealBuilder addItem(Meal meal) {
+			return null;
+		}
+		
+		public MealBuilder prepareVegMeal(){
+			return null;
+        }
+		
+		public MealBuilder prepareNonVegMeal(){
+			return null;
+        }
+		
+		public Meal build() {
+			return null;
+		}
+	}
+	
+	public Meal() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Meal(List<Item> mealItems) {
+		this.items = mealItems;
+	}
+	
+	@Override
+	public String toString() {
+		String results = "+";
+		
+	    for(Item m : items) {
+	        results += m.toString(); //if you implement toString() for Dog then it will be added here
+	    }
+	    
+	    return results;
+	}
+}

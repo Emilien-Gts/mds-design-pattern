@@ -1,0 +1,14 @@
+package fr.mds.launcher;
+
+import fr.mds.model.Meal;
+import fr.mds.model.Meal.MealBuilder;
+import fr.mds.model.VegBurger;
+
+public class Main {
+	public static void main(String args[]) { 
+        System.out.println("Hello, World"); 
+        MealBuilder mb = new MealBuilder();
+        
+        Meal vegMeal = mb.prepareNonVegMeal().addItem(new VegBurger("MyDigitalVegi", null, 100)).build();
+    } 
+}
