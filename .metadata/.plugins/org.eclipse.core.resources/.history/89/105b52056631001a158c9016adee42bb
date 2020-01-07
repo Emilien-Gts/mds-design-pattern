@@ -8,7 +8,7 @@ public class Main {
 		MealBuilder mb = new MealBuilder();
 		
 		Meal beefMeal = mb.prepareNonVegMeal().build();
-		System.out.println("beefMeal");
+		System.out.println("beefMeal total cost: "+beefMeal.getCoast());
 		beefMeal.showItems();
 		
 		System.out.println();

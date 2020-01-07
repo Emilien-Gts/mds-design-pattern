@@ -7,14 +7,12 @@ public class Main {
 	public static void main(String args[]) {
 		MealBuilder mb = new MealBuilder();
 		
-		Meal beefMeal = mb.prepareNonVegMeal().build();
-		System.out.println("beefMeal");
-		beefMeal.showItems();
-		
-		System.out.println();
-		
 		Meal vegMeal = mb.prepareNonVegMeal().build();
-		System.out.println("vegMeal");
+		System.out.println("vegMeal total cost: "+vegMeal.getCoast());
 		vegMeal.showItems();
+		System.out.println();
+		Meal beefMeal = mb.prepareNonVegMeal().build();
+		System.out.println("beefMeal total cost: "+beefMeal.getCoast());
+		beefMeal.showItems();
     } 
 }
