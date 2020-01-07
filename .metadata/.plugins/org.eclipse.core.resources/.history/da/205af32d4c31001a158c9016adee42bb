@@ -23,12 +23,6 @@ public class Meal {
 	}
 	
 	public static class MealBuilder {
-		public Meal prepareVegMeal(){
-			return null;
-        }
 		
-		public Meal prepareNonVegMeal(){
-			return null;
-        }
 	}
 }

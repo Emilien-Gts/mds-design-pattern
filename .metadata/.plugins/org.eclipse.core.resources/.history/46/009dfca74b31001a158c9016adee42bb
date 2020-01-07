@@ -21,14 +21,4 @@ public class Meal {
 	public void showItems() {
 		
 	}
-	
-	public static class MealBuilder {
-		public Meal prepareVegMeal(){
-			return null;
-        }
-		
-		public Meal prepareNonVegMeal(){
-			return null;
-        }
-	}
 }

@@ -1,6 +1,5 @@
 package fr.mds.launcher;
 
-import fr.mds.model.Meal.MealBuilder;
 
 public class Main {
 	public static void main(String args[]) { 
