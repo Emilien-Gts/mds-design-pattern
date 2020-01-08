@@ -1,5 +1,0 @@
-package fr.mds.model;
-
-public class Meal {
-	private List<Item> items = new ArrayList<Item>();
-}
