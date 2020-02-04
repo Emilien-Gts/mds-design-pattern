@@ -8,6 +8,8 @@ import fr.mds.dp.model.AllObjects;
 import fr.mds.dp.model.Blue;
 import fr.mds.dp.model.Circle;
 import fr.mds.dp.model.Color;
+import fr.mds.dp.model.CombinedItem;
+import fr.mds.dp.model.DrawItem;
 import fr.mds.dp.model.Green;
 import fr.mds.dp.model.Item;
 import fr.mds.dp.model.Rectangle;
@@ -65,6 +67,8 @@ public class AbstractFactoryPatternDemo {
 		// call draw method of Shape Circle
 		myShape.draw();
 		
+		/************************************/
+		
 		Item item = FactoryProducer.getItem(AllObjects.BLUE);
 		System.out.println("this is a " + item.getName());
 		
@@ -82,5 +86,34 @@ public class AbstractFactoryPatternDemo {
 		
 		item = FactoryProducer.getItem(AllObjects.CIRCLE);
 		System.out.println("this is a " + item.getName());
+		
+		/************************************/
+		
+		CombinedItem cItem1 = new CombinedItem();
+		cItem1.setColor(colorFactory.getColor(Blue.BLUE));
+		cItem1.setShape(shapeFactory.getShape(Square.SQUARE));
+		
+		CombinedItem cItem2 = new CombinedItem();
+		cItem2.setColor(colorFactory.getColor(Red.RED));
+		cItem2.setShape(shapeFactory.getShape(Square.SQUARE));
+		
+		CombinedItem cItem3 = new CombinedItem();
+		cItem3.setColor(colorFactory.getColor(Blue.BLUE));
+		cItem3.setShape(shapeFactory.getShape(Circle.CIRCLE));
+		
+		CombinedItem cItem4 = new CombinedItem();
+		cItem4.setColor(colorFactory.getColor(Green.GREEN));
+		cItem4.setShape(shapeFactory.getShape(Rectangle.RECTANGLE));
+		
+		DrawItem dItem = new DrawItem();
+		
+		dItem.setName("mon dessin");
+		
+		dItem.getItems().add(cItem1);
+		dItem.getItems().add(cItem2);
+		dItem.getItems().add(cItem3);
+		dItem.getItems().add(cItem4);
+		
+		dItem.print();
 	}
 }
