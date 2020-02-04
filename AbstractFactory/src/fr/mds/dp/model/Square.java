@@ -1,6 +1,6 @@
 package fr.mds.dp.model;
 
-public class Square implements Shape {
+public class Square implements Shape, Item {
 
 	public static final String SQUARE = "SQUARE";
 
@@ -8,6 +8,12 @@ public class Square implements Shape {
 	public void draw() {
 		System.out.println("Square - draw()");
 
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return SQUARE;
 	}
 
 }

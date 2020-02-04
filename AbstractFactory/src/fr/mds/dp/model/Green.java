@@ -1,6 +1,6 @@
 package fr.mds.dp.model;
 
-public class Green implements Color {
+public class Green implements Color, Item {
 	
 	public static final String GREEN = "GREEN";
 
@@ -8,6 +8,12 @@ public class Green implements Color {
 	public void fill() {
 		System.out.println("Green - fill()");
 		
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return GREEN;
 	}
 
 }

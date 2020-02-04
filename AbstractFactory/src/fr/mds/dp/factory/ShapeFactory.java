@@ -2,6 +2,7 @@ package fr.mds.dp.factory;
 
 import fr.mds.dp.model.Circle;
 import fr.mds.dp.model.Color;
+import fr.mds.dp.model.Item;
 import fr.mds.dp.model.Rectangle;
 import fr.mds.dp.model.Shape;
 import fr.mds.dp.model.Square;
@@ -22,14 +23,33 @@ public class ShapeFactory extends AbstractFactory {
 			return null;
 		}
 
-		if (shape.equalsIgnoreCase("CIRCLE")) {
+		if (shape.equalsIgnoreCase(Circle.CIRCLE)) {
 			return new Circle();
 
-		} else if (shape.equalsIgnoreCase("SQUARE")) {
+		} else if (shape.equalsIgnoreCase(Square.SQUARE)) {
 			return new Square();
 
-		} else if (shape.equalsIgnoreCase("RECTANGLE")) {
+		} else if (shape.equalsIgnoreCase(Rectangle.RECTANGLE)) {
 			return new Rectangle();
+		}
+
+		return null;
+	}
+
+	@Override
+	public Item getItem(String item) {
+		if (item == null) {
+			return null;
+		}
+
+		if (item.equalsIgnoreCase(Circle.CIRCLE)) {
+			return new Circle();
+
+		} else if (item.equalsIgnoreCase(Rectangle.RECTANGLE)) {
+			return new Rectangle();
+
+		} else if (item.equalsIgnoreCase(Square.SQUARE)) {
+			return new Square();
 		}
 
 		return null;

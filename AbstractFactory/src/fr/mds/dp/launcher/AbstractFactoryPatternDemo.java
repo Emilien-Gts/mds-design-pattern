@@ -4,10 +4,12 @@ import fr.mds.dp.factory.AbstractFactory;
 import fr.mds.dp.factory.ColorFactory;
 import fr.mds.dp.factory.FactoryProducer;
 import fr.mds.dp.factory.ShapeFactory;
+import fr.mds.dp.model.AllObjects;
 import fr.mds.dp.model.Blue;
 import fr.mds.dp.model.Circle;
 import fr.mds.dp.model.Color;
 import fr.mds.dp.model.Green;
+import fr.mds.dp.model.Item;
 import fr.mds.dp.model.Rectangle;
 import fr.mds.dp.model.Red;
 import fr.mds.dp.model.Shape;
@@ -62,5 +64,23 @@ public class AbstractFactoryPatternDemo {
 		
 		// call draw method of Shape Circle
 		myShape.draw();
+		
+		Item item = FactoryProducer.getItem(AllObjects.BLUE);
+		System.out.println("this is a " + item.getName());
+		
+		item = FactoryProducer.getItem(AllObjects.GREEN);
+		System.out.println("this is a " + item.getName());
+		
+		item = FactoryProducer.getItem(AllObjects.RED);
+		System.out.println("this is a " + item.getName());
+		
+		item = FactoryProducer.getItem(AllObjects.SQUARE);
+		System.out.println("this is a " + item.getName());
+		
+		item = FactoryProducer.getItem(AllObjects.RECTANGLE);
+		System.out.println("this is a " + item.getName());
+		
+		item = FactoryProducer.getItem(AllObjects.CIRCLE);
+		System.out.println("this is a " + item.getName());
 	}
 }
